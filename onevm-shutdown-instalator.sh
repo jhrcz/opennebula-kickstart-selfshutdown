@@ -10,5 +10,6 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/home/oneadmin/.gem/ruby/1.8/bin
 # /end
 
-onevm saveas scientific61-cdimage 1 scientific61-cdimage-autosave-$(date +%s)
-onevm shutdown scientific61-cdimage
+#onevm saveas scientific61-cdimage 1 scientific61-cdimage-autosave-$(date +%s)
+onevm saveas scientific61-cdimage 1 scientific61-cdimage-autosave-$(date +%Y%m%d-%H%M%S)
+#onevm shutdown scientific61-cdimage
