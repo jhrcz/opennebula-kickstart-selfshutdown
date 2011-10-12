@@ -13,5 +13,7 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/home/oneadmin/.gem/ruby/1.8/bin
 # /end
 
-onevm saveas scientific61-cdimage-ksinstaller-"$variant" 1 scientific61-template-"$variant"-autosave-$(date +%Y%m%d-%H%M%S)
-onevm shutdown scientific61-cdimage-ksinstaller-"$variant"
+id=$(onevm list | while read id rest ; do onevm show $id | grep -q ksinstaller-$variant.ks && echo $id ; done)
+
+onevm saveas "$id" 1 scientific61-template-"$variant"-autosave-$(date +%Y%m%d-%H%M%S)
+onevm shutdown "$id"
